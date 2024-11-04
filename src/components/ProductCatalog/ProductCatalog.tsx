@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable max-len */
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-console */
@@ -78,23 +79,32 @@ export const ProductCatalog: React.FC<Props> = ({ products }) => {
 
   console.log('Total items:', totalItems);
 
-  const itemsPerPage = parseInt(itemsOnPage, 10) === 0 ? totalItems : parseInt(itemsOnPage, 10);
+  const itemsPerPage =
+    parseInt(itemsOnPage, 10) === 0 ? totalItems : parseInt(itemsOnPage, 10);
 
   console.log('Items per page:', itemsPerPage);
 
-  const totalPages = itemsPerPage > 0 ? Math.ceil(totalItems / itemsPerPage) : 1;
+  const totalPages =
+    itemsPerPage > 0 ? Math.ceil(totalItems / itemsPerPage) : 1;
 
-  const totalPagesArray = Array.from({ length: totalPages }, (_, index) => index);
+  const totalPagesArray = Array.from(
+    { length: totalPages },
+    (_, index) => index,
+  );
 
   const handlePrevButton = () => {
     if (currentPage > 1) {
-      setSearchParams(getSearchWith({ currentPage: `${currentPage - 1}` }, searchParams));
+      setSearchParams(
+        getSearchWith({ currentPage: `${currentPage - 1}` }, searchParams),
+      );
     }
   };
 
   const handleNextButton = () => {
     if (currentPage < totalPages) {
-      setSearchParams(getSearchWith({ currentPage: `${currentPage + 1}` }, searchParams));
+      setSearchParams(
+        getSearchWith({ currentPage: `${currentPage + 1}` }, searchParams),
+      );
     }
   };
 
@@ -110,10 +120,13 @@ export const ProductCatalog: React.FC<Props> = ({ products }) => {
     return totalPagesArray.slice(currentPage - 2, currentPage + 2);
   })();
 
-  const displayedProducts = itemsPerPage > 0 ? sortedProducts.slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage,
-  ) : sortedProducts;
+  const displayedProducts =
+    itemsPerPage > 0
+      ? sortedProducts.slice(
+        (currentPage - 1) * itemsPerPage,
+        currentPage * itemsPerPage,
+      )
+      : sortedProducts;
 
   console.log('Displayed products:', displayedProducts.length);
 
