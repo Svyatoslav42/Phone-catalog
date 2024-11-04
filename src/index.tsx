@@ -1,9 +1,13 @@
 import { createRoot } from 'react-dom/client';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { Provider } from 'react-redux';
 
-import 'bulma/css/bulma.css';
-import '@fortawesome/fontawesome-free/css/all.css';
-import './index.scss';
+import { Root } from './Root';
 
-import { App } from './App';
+import store from './app/store';
 
-createRoot(document.getElementById('root') as HTMLDivElement).render(<App />);
+createRoot(document.getElementById('root') as HTMLElement).render(
+  <Provider store={store}>
+    <Root />
+  </Provider>,
+);

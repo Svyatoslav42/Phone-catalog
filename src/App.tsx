@@ -1,21 +1,35 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
 import './App.scss';
+import { Header } from './components/Header';
+import { Aside } from './components/Aside';
+import { Footer } from './components/Footer';
 
-interface Props {
-  onClick: () => void;
-  children: React.ReactNode;
-}
+export const App = () => {
+  const [isAsideOpen, setIsAsideOpen] = useState(false);
+  const location = useLocation();
 
-export const Provider: React.FC<Props> = React.memo(({ onClick, children }) => (
-  <button type="button" onClick={onClick}>
-    {children}
-  </button>
-));
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
 
-export const App: React.FC = () => {
+    if (params.get('aside') === 'open') {
+      setIsAsideOpen(true);
+    } else {
+      setIsAsideOpen(false);
+    }
+  }, [location.search]);
+
   return (
-    <div className="starter">
-      <Provider onClick={() => ({})}>TodoList</Provider>
+    <div className="App" id="root">
+      {isAsideOpen && <Aside />}
+
+      <Header />
+
+      <main className="container">
+        <Outlet />
+      </main>
+
+      <Footer />
     </div>
   );
 };
