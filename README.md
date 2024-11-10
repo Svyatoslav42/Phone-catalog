@@ -12,10 +12,10 @@ A lightweight and efficient boilerplate to kickstart your React project with Typ
 ---
 
 ## 🌐 [Demo Link](https://svyatoslav42.github.io/Phone-catalog/)
----
+
 
 ## 🎨 [Figma](https://www.figma.com/design/lSR1m42L9YwzQwzzxKwHpw/THE-MET?node-id=8590-29&node-type=canvas&t=Glx7B6NrcznrGyPD-0)
----
+
 
 ## 🖥️ How to Run the Project Locally
 
