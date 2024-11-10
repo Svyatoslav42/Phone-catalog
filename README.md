@@ -23,10 +23,10 @@ A lightweight and efficient boilerplate to kickstart your React project with Typ
    ```bash
    git clone https://github.com/Svyatoslav42/Phone-catalog.git
 
-2.**Install Dependencies: Make sure you have Node.js installed, then run:**
+2. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/Svyatoslav42/Phone-catalog.git
 
-   npm install
-
-3.**Start the Development Server:**
-
+3. **Start the Development Server**:
+   ```bash
    npm start
