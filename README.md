@@ -25,7 +25,7 @@ A lightweight and efficient boilerplate to kickstart your React project with Typ
 
 2. **Clone the Repository**:
    ```bash
-   git clone https://github.com/Svyatoslav42/Phone-catalog.git
+   npm i
 
 3. **Start the Development Server**:
    ```bash
