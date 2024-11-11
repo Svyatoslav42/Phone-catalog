@@ -23,7 +23,7 @@ A lightweight and efficient boilerplate to kickstart your React project with Typ
    ```bash
    git clone https://github.com/Svyatoslav42/Phone-catalog.git
 
-2. **Clone the Repository**:
+2. **Install npm**:
    ```bash
    npm i
 
